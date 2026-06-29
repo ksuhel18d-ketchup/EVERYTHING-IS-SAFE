@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 /* ─────────────────────────────────────────────────────────────
    DESIGN TOKENS (match landing page exactly)
@@ -228,6 +229,8 @@ export default function LoginPage() {
   const [loading, setLoading]     = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
+  const navigate = useNavigate();
+
   /* ── Validate ── */
   const validate = () => {
     const e = {}
@@ -246,7 +249,13 @@ export default function LoginPage() {
     setErrors({})
     setLoading(true)
     // Simulate async (replace with real auth)
-    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1400)
+   setTimeout(() => {
+
+  setLoading(false);
+
+  navigate("/dashboard");
+
+}, 2000);
   }
 
   /* ── Success state ── */
@@ -332,6 +341,13 @@ export default function LoginPage() {
             {/* Google SSO */}
             <button
               type="button"
+              onClick={() => {
+  setLoading(true);
+
+  setTimeout(() => {
+    navigate("/dashboard");
+  }, 2000);
+}}
               className="w-full flex items-center justify-center gap-3 bg-white border border-[#E8E8ED] rounded-xl py-3 text-[15px] font-semibold text-[#0A0A0B] hover:bg-[#F5F5F7] hover:border-[#C8C8D0] active:scale-[0.98] transition-all duration-150 mb-6"
               style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
             >
