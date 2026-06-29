@@ -745,7 +745,7 @@ export default function Landing() {
           </div>
           <div className="border-t border-[#E8E8ED] pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#ABABAB]">
             <p>© 2024 Everything Is Safe. Built for good.</p>
-            <p>Made with ❤️ for safety — a hackathon project</p>
+            <p>Made with ❤️ for safety — a hackathon project by Suhel Khan</p>
           </div>
         </div>
       </footer>
