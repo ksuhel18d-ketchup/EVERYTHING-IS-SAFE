@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-
+import { useNavigate } from "react-router-dom";
 /* ─────────────────────────────────────────────
    DESIGN TOKENS (derived from plan)
    Base:    #FFFFFF / #F5F5F7
@@ -210,6 +210,7 @@ function StatCard({ to, suffix, prefix, label, sub }) {
    MAIN COMPONENT
 ───────────────────────────────────────────── */
 export default function Landing() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [aiMsg, setAiMsg] = useState("");
@@ -348,6 +349,12 @@ export default function Landing() {
               <a href="#download" className="red-grad text-white font-bold px-7 py-3.5 rounded-2xl text-[15px] text-center hover:opacity-90 transition-opacity shadow-[0_4px_24px_rgba(239,34,34,0.35)]">
                 Download Free
               </a>
+              <button
+  onClick={() => navigate("/login")}
+  className="bg-white text-[#FF3B3B] font-bold px-7 py-3.5 rounded-2xl text-[15px]"
+>
+  Get Started
+</button>
               <a href="#features" className="bg-[#F5F5F7] text-[#0A0A0B] font-semibold px-7 py-3.5 rounded-2xl text-[15px] text-center hover:bg-[#EBEBEF] transition-colors">
                 See Features →
               </a>
